@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Catálogo de Serviços</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css"/>
+  
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="cabecalho" class="container-fluid">
+
+      <div class="container">
+
+        <hgroup>
+          <h1> Cálculo de IMC</h1>
+          <h2> 2017 </h2>
+        </hgroup>
+
+      </div>
+
+    </header>
+      
+    
+
+       <div class="container">
+
+          <div row>
+
+            <div class="espaco">
+            
+            </div>
+            <br> <br> <br>
+            <div cl-md-2>
+
+                <div class="container">
+
+                <script type="text/javascript">
+                  function calcula_imc(){
+                  var altura = document.imcForm.altura.value;
+                  var peso = document.imcForm.peso.value;
+                  
+                  var quadrado = (altura * altura);
+                  
+                  var calculo = (peso/quadrado);
+                  
+                  if(calculo<18.5){
+                  alert("Você está magro com esse indice: " + calculo);
+                  }
+                  else if(calculo>=18.5 && calculo<24.9){
+                  alert("Você está normal com esse indice: " + calculo);
+                  }
+                  
+                  else if(calculo>=25 && calculo<29.9) {
+                  alert("Você está com sobre peso com esse indice: " + calculo);
+                  }
+                  else if(calculo>=30 && calculo<39.9) {
+                  alert("Você está com obesidade com esse indice: " + calculo);
+                  }
+                  else if (calculo>40)
+                  alert("Você está com obesidade grave com esse indice: " + calculo);
+                  }
+                  
+                  </script>
+                  
+                  <form class="form-control" name="imcForm" id="imcForm" action="#">
+                  
+                  <p>
+                  Altura<br />
+                  <input class="form-control" type="text" id="altura" name="altura" />
+                  </p>
+                  
+                  <p>Peso <br />
+                  <input class="form-control" type="text" id="peso" name="peso" />
+                  </p>
+                  
+                  <select name="Sexo">
+                    <option value="Masculino"> Masculino
+                    </option>
+                    <option value="Feminino"> Feminino
+                    </option>
+                  </select>
+
+                  <br/> <br/> <br/> 
+
+                  <p><input class="button-bnt" name="Enviar" type="submit" value="Calcular" onclick="calcula_imc()" />
+                  </p>
+                  </form>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+        </div>
+
+      <div class="espaco">
+      
+      </div>
+
+  </div>
+</body>
+
+  <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
